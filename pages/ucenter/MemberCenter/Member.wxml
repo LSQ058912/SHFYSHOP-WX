@@ -1,0 +1,9 @@
+<View>
+<View class="header">
+    <text>会员充值页面</text>
+</View>
+<View>
+    <text>点击链接跳转支付</text>
+</View>
+
+</View>

@@ -16,6 +16,7 @@
     "pages/ucenter/couponSelect/couponSelect",
     "pages/ucenter/collect/collect",
     "pages/ucenter/user/user",
+    "pages/ucenter/MemberCenter/Member",
     "pages/auth/login/login",
     "pages/auth/accountLogin/accountLogin",
     "pages/auth/register/register",

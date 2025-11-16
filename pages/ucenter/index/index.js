@@ -7,33 +7,34 @@ Page({
    * 页面的初始数据
    */
   data: {
-      userInfo: {
-        nickName: '点击登录',
-        avatarUrl: '/static/images/avatar.png'
-      },
-      order: {
-        unpaid: 0,
-        unship: 0,
-        unrecv: 0,
-        uncomment: 0
-      },
+    userInfo: {
+      nickName: '点击登录',
+      avatarUrl: '/static/images/avatar.png'
+    },
+    order: {
+      unpaid: 0,
+      unship: 0,
+      unrecv: 0,
+      uncomment: 0
+    },
     MyMenus: [
-      { url: "/pages/ucenter/collect/collect", pic:"icon_collect.png",name:"商品收藏"},
+      { url: "/pages/ucenter/collect/collect", pic: "icon_collect.png", name: "商品收藏" },
       { url: "/pages/ucenter/footprint/footprint", pic: "footprint.png", name: "浏览足迹" },
       { url: "/pages/groupon/myGroupon/myGroupon", pic: "group.png", name: "我的拼团" },
       { url: "/pages/ucenter/address/address", pic: "address.png", name: "地址管理" },
       { url: "/pages/ucenter/feedback/feedback", pic: "feedback.png", name: "意见反馈" },
+      { url: "/pages/ucenter/MemberCenter/Member", pic: "friend_1.png", name: "加入会员" },
       { url: "/pages/about/about", pic: "about_us.png", name: "关于我们" }
       // *,{ url: "/pages/about/about", pic: "comment.png", name: "使用帮助" }
-      ],
-      hasLogin: false,
-      totalAmount: 0.00
+    ],
+    hasLogin: false,
+    totalAmount: 0.00
   },
 
   /**
    * 页面跳转
   */
-  goPages:function(e){
+  goPages: function (e) {
     console.log();
     if (this.data.hasLogin) {
       wx.navigateTo({
@@ -50,22 +51,22 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-   
+
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-    
+
   },
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-    
+
   },
-  onShow:function(){
+  onShow: function () {
     //获取用户的登录信息
     if (app.globalData.hasLogin) {
       let userInfo = wx.getStorageSync('userInfo');
@@ -85,6 +86,22 @@ Page({
           });
         }
       });
+      if (userInfo.userLevelDesc != "普通用户") {
+        this.setData({
+          MyMenus: [
+            { url: "/pages/ucenter/collect/collect", pic: "icon_collect.png", name: "商品收藏" },
+            { url: "/pages/ucenter/footprint/footprint", pic: "footprint.png", name: "浏览足迹" },
+            { url: "/pages/groupon/myGroupon/myGroupon", pic: "group.png", name: "我的拼团" },
+            { url: "/pages/ucenter/address/address", pic: "address.png", name: "地址管理" },
+            { url: "/pages/ucenter/feedback/feedback", pic: "feedback.png", name: "意见反馈" },
+            { url: "", pic: "friend_1.png", name: "会员中心" },
+            { url: "/pages/about/about", pic: "about_us.png", name: "关于我们" }
+          ]
+        });
+      }
+
+      console.log("321321", userInfo.userLevelDesc != "普通用户")
+
     }
   },
 

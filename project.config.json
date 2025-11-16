@@ -30,7 +30,7 @@
     "disableSWC": true
   },
   "compileType": "miniprogram",
-  "libVersion": "2.16.0",
+  "libVersion": "3.11.1",
   "appid": "wx5518bb2edcf57e62",
   "projectname": "dts-shop",
   "simulatorType": "wechat",
