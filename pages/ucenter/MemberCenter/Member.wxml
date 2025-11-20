@@ -1,9 +1,76 @@
-<View>
-<View class="header">
-    <text>会员充值页面</text>
-</View>
-<View>
-    <text>点击链接跳转支付</text>
-</View>
-
-</View>
+<view class="container">
+  <view class="member-center">
+    <view class="header">
+      <text class="header-text">开通会员 · 专享更多权益</text>
+      <view class="tags">
+        <text class="tag">✔ 专属权益</text>
+        <text class="tag">✔ 超值折扣</text>
+        <text class="tag">✔ 高级服务</text>
+      </view>
+    </view>
+    <view class="content">
+      <view class="member-info">
+        <!-- 基础会员 -->
+        <view class="memberfirst {{selectedMember === 'basic' ? 'selected' : ''}}" bindtap="selectMember" data-type="basic">
+          <view class="check-mark" wx:if="{{selectedMember === 'basic'}}">✓</view>
+          <view class="card-head">基础会员</view>
+          <view class="price">¥9<span>/月</span>
+        </view>
+        <view class="bullets">
+          <text class="bullet">✔ 基础功能解锁</text>
+          <text class="bullet">✔ 每日次数提升</text>
+          <button class="btn" catchtap="buyMember" data-type="basic">点击购买基础会员</button>
+        </view>
+      </view>
+      <!-- 高级会员 -->
+      <view class="membersecond {{selectedMember === 'premium' ? 'selected' : ''}}" bindtap="selectMember" data-type="premium">
+        <view class="check-mark" wx:if="{{selectedMember === 'premium'}}">✓</view>
+        <view class="card-head">高级会员</view>
+        <view class="price">¥18.8<span>/月</span>
+      </view>
+      <view class="bullets">
+        <text class="bullet">✔ 解锁全部基础功能</text>
+        <text class="bullet">✔ 更高的使用次数</text>
+        <text class="bullet">✔ 专属云服务</text>
+        <button class="btn" catchtap="buyMember" data-type="premium">点击购买高级会员</button>
+      </view>
+    </view>
+    <!-- 至尊会员 -->
+    <view class="memberthird {{selectedMember === 'supreme' ? 'selected' : ''}}" bindtap="selectMember" data-type="supreme">
+      <view class="check-mark" wx:if="{{selectedMember === 'supreme'}}">✓</view>
+      <view class="card-head">至尊会员</view>
+      <view class="price">¥28.8<span>/月</span>
+    </view>
+    <view class="bullets">
+      <text class="bullet">✔ 全功能无限制</text>
+      <text class="bullet">✔ 优先处理</text>
+      <text class="bullet">✔ 专属资源包</text>
+      <button class="btn" catchtap="buyMember" data-type="supreme">点击购买至尊会员</button>
+    </view>
+  </view>
+</view>
+<!-- 会员权益说明区域 -->
+<!-- <view class="benefits-section">
+  <view class="benefits-header">会员权益说明</view>
+  <view class="benefits-content">
+    <view class="benefit-item">
+      <text class="benefit-title">专属权益</text>
+      <text class="benefit-desc">享受会员专属功能和服务，提升使用体验。</text>
+    </view>
+    <view class="benefit-item">
+      <text class="benefit-title">超值折扣</text>
+      <text class="benefit-desc">会员可享受商品和服务的专属折扣优惠。</text>
+    </view>
+    <view class="benefit-item">
+      <text class="benefit-title">高级服务</text>
+      <text class="benefit-desc">优先客服支持，专属资源包下载等高级服务。</text>
+    </view>
+  </view>
+</view> -->
+</view>
+<!-- 充值按钮区域 -->
+<!-- <view class="recharge-section">
+  <button class="recharge-btn" bindtap="navigateToRecharge">充值会员</button>
+</view> -->
+</view>
+</view>
